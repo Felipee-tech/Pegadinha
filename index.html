@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pegadinha</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f2f2f2;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    #sim {
+      background: #4CAF50;
+      color: white;
+    }
+
+    #nao {
+      background: #f44336;
+      color: white;
+      position: absolute; /* pra poder mover */
+
+
+
+      @media (max-whitd: 450px){
+        h1 {
+      margin-bottom: 30px;
+      align-items: center;
+
+    }
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>manuela e viada? 😏</h1>
+
+<button class="btn" id="sim">Sim</button>
+<button class="btn" id="nao">Não</button>
+
+<script>
+const botaoNao = document.getElementById("nao");
+
+// Função que move o botão para posição aleatória
+function fugir() {
+  const x = Math.floor(Math.random() * (window.innerWidth - botaoNao.offsetWidth));
+  const y = Math.floor(Math.random() * (window.innerHeight - botaoNao.offsetHeight));
+  
+  botaoNao.style.left = `${x}px`;
+  botaoNao.style.top = `${y}px`;
+}
+
+// Evento para PC
+botaoNao.addEventListener("mouseover", fugir);
+
+// Evento para celular
+botaoNao.addEventListener("touchstart", fugir);
+
+// Evento para o botão "Sim"
+document.getElementById("sim").addEventListener("click", () => {
+  alert("Eu sabia! 😁");
+});
+</script>
+
+  </script>
+</body>
+</html>
